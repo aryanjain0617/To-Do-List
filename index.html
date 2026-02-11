@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Project Manager | Advanced Filters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-section">
+            <input type="text" id="projectSearch" placeholder="🔍 Search projects..." oninput="renderTabs()">
+        </div>
+
+        <div id="projectTabs" class="tabs-container"></div>
+
+        <div class="header-row">
+            <h1 id="activeProjectTitle">Project 1</h1>
+            <input type="text" id="taskSearch" placeholder="Search task name..." oninput="renderTasks()">
+            <button onclick="renameProject()" class="edit-link">Rename List</button>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Task name...">
+            <select id="categoryInput">
+                <option value="Urgent">Urgent</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Coding">Coding</option>
+                <option value="Long Term">Long Term</option>
+                <option value="Daily Schedule">Daily Schedule</option>
+            </select>
+            <input type="date" id="dateInput">
+            <input type="number" id="priorityInput" placeholder="Prio (1-20)" min="1" max="20">
+            <button onclick="addTask()" class="main-btn">Add Task</button>
+        </div>
+
+        <table id="taskTable">
+            <thead>
+                <tr>
+                    <th>
+                        Status
+                        <select class="header-filter" id="statusFilter" onchange="renderTasks()">
+                            <option value="all">All</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Done</option>
+                        </select>
+                    </th>
+                    <th>Task Name</th>
+                    <th>
+                        Category
+                        <select class="header-filter" id="catFilter" onchange="renderTasks()">
+                            <option value="all">All</option>
+                            <option value="Urgent">Urgent</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Coding">Coding</option>
+                            <option value="Long Term">Long Term</option>
+                            <option value="Daily Schedule">Daily Schedule</option>
+                        </select>
+                    </th>
+                    <th>
+                        Due Date
+                        <input type="date" id="dateFilter" class="header-date-filter" onchange="renderTasks()">
+                    </th>
+                    <th onclick="toggleSort()" class="sortable-header" style="cursor:pointer">
+                        Prio <span id="sortIcon">↕</span>
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="taskList"></tbody>
+        </table>
+
+        <div class="footer-actions">
+            <button onclick="clearCompleted()" class="secondary-btn">Clear Completed</button>
+            <button onclick="createNewProject()" class="add-template-btn">Add New Project List</button>
+            <button onclick="deleteProject()" class="del-btn">Delete Project</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

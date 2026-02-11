@@ -1,0 +1,234 @@
+:root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --primary: #bb86fc;
+    --secondary: #03dac6;
+    --danger: #cf6679;
+    --edit-blue: #03a9f4;
+    --save-green: #4caf50;
+    --border: #333;
+    --tab-inactive: #2c2c2c;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 95%;
+    max-width: 1150px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.search-section {
+    margin-bottom: 15px;
+}
+
+#projectSearch {
+    width: 100%;
+    border-color: var(--border);
+    box-sizing: border-box;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+#taskSearch {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    flex-grow: 1;
+}
+
+.tabs-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    overflow-x: auto;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--tab-inactive);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: black;
+    font-weight: bold;
+}
+
+.count-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+input,
+select {
+    background: #2c2c2c;
+    border: 1px solid var(--border);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.header-filter {
+    background: #1e1e1e;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.header-date-filter {
+    background: #121212;
+    border: 1px solid var(--primary);
+    padding: 2px;
+    font-size: 0.7rem;
+    color: var(--primary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: #252525;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.priority-badge {
+    background: var(--danger);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.date-text {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.completed {
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+.edit-btn {
+    background: transparent;
+    border: 1px solid var(--edit-blue);
+    color: var(--edit-blue);
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.del-btn {
+    background: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background: var(--save-green);
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.main-btn {
+    background: var(--secondary);
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.secondary-btn {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-template-btn {
+    background: var(--primary);
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.empty-msg {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-style: italic;
+}
